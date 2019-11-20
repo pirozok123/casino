@@ -35,7 +35,7 @@ include("./functions.php");
 
 	$query = "UPDATE `users` SET `subjects`  = '".time()."',  `subjects` = '".$subjectname."' WHERE id ='".$user_id."'"; 
 	$result = mysqli_query($con,$query) or die(mysqli_error());
-       //sendBonusToMail($randomcredits);
+       //sendBonusToMail($subjectname);
 	$success = true;
 
 	?>
