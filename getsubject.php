@@ -33,9 +33,8 @@ include("./functions.php");
 
     $subjectname = spinName((int)$_POST["spin"]);	
 
-	$query = "UPDATE `users` SET `subjects`  = '".time()."',  `subjects` = '".$subjectname."' WHERE id ='".$user_id."'"; 
+	$query = "UPDATE `users` SET `subjects_time` = '".time()."', `subjects` = '".$subjectname."' WHERE id ='".$user_id."'"; 
 	$result = mysqli_query($con,$query) or die(mysqli_error());
-       //sendBonusToMail($subjectname);
 	$success = true;
 
 	?>
