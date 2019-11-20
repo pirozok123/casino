@@ -2,6 +2,6 @@
 
 /* Про консльную команду забыл */
 
-shell_exec('php /var/html/sendbonuses.php?howmuch=100.php');
+shell_exec('php /var/html/sendbonuses.php?howmuch=100');
 
 ?>
