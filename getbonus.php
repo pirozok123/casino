@@ -22,7 +22,6 @@ $user_id = $row[0];
 if($сredits_time < time() || $сredits_time == 0){
 	$query = "UPDATE `users` SET `credits_time`  = '".$timeforcredits."',  `credits` = `credits` + '".$randomcredits."' WHERE id ='".$user_id."'"; 
 	$result = mysqli_query($con,$query) or die(mysqli_error());
-	//sendBonusToMail($randomcredits);
 	$success = true;
 }
 
