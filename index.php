@@ -7,10 +7,10 @@ if(isset($_SESSION['username'])):
 ?>
 
 <div class="form">
-<p><a href="./getcash.php">Получить денежный приз (1 раз в день)</a></p>
-<p><a href="./getbonus.php">Получить бонус (1 раз в час)</a></p>
-<p><a href="./getsubject.php">Получить предмет (выбрать из списка)</a></p>
-<p><a href="./casout.php">Вывести на банковский счёт (functions.php)</a></p>
+<p><a href="casino/getcash.php">Получить денежный приз (1 раз в день)</a></p>
+<p><a href="casino/getbonus.php">Получить бонус (1 раз в час)</a></p>
+<p><a href="casino/getsubject.php">Получить предмет (выбрать из списка)</a></p>
+<p><a href="casino/casout.php">Вывести на банковский счёт (functions.php)</a></p>
 
 </div>
 
