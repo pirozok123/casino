@@ -1,5 +1,38 @@
 <?php
 
+function sendBonuses($howmuch){
+
+global $con;	
+
+$randomSubject = range(1, 4);
+shuffle($randomSubject);
+
+$subjectname = spinName($randomSubject[0]);
+
+$randomcash = rand(1,10);
+$randomcredits = rand(1,100);
+
+$query = "SELECT `id` FROM `users` WHERE bonuspacket = 0"; 
+
+$result = mysqli_query($con,$query);
+
+$timeforcash = time()  + 86400;
+$timeforcredits = time()  + 3600;
+
+while($row = mysqli_fetch_assoc($result)){
+ 
+  $user_id = $row["id"]; 	
+  $query = "UPDATE `users` SET `balance_time`  = '".$timeforcash."',  `balance` = `balance` + '".$randomcash."', credits = credits + ".$randomcredits.", credits_time = '".$timeforcredits."', subjects = '".$subjectname."', subjects_time = '".time()."' WHERE id ='".(int)$user_id."'"; 
+	$result = mysqli_query($con,$query); 
+
+    if($howmuch==1)	{
+    /* Все бонусы добавлены */
+    $query = "UPDATE `users` SET `bonuspacket` = 1 WHERE id ='".(int)$user_id."'"; 
+	$result = mysqli_query($con,$query); 
+    }
+}
+}
+
 function spinName($spinkey){
 	switch ($spinkey) {
 		case 1:
